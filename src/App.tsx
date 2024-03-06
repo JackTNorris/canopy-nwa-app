@@ -4,7 +4,7 @@ import {HomeScreen} from './screens/HomeScreen';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {NavigationContainer} from '@react-navigation/native';
 import {ProfileScreen} from './screens/ProfileScreen';
-import { VoiceControlScreen } from './screens/VoiceControlScreen';
+import {VoiceControlScreen} from './screens/VoiceControlScreen';
 
 const Tab = createBottomTabNavigator();
 
