@@ -3,9 +3,9 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {HomeMenuScreen} from './HomeScreen/HomeMenuScreen';
 import {PainGuideScreen} from './HomeScreen/PainGuideScreen';
-import { MedicalNeedScreen } from './HomeScreen/MedicalNeedScreen';
-import { ResourcesScreen } from './HomeScreen/ResourcesScreen';
-import { LearningLibraryScreen } from './HomeScreen/LearningLibraryScreen';
+import {MedicalNeedScreen} from './HomeScreen/MedicalNeedScreen';
+import {ResourcesScreen} from './HomeScreen/ResourcesScreen';
+import {LearningLibraryScreen} from './HomeScreen/LearningLibraryScreen';
 
 export type HomeScreenRouteParams = {
   HomeMenuScreen: undefined;

@@ -1,13 +1,14 @@
+//TODO: move link to some sort of assets file
 import React from 'react';
-import {Linking, Text, View} from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
-import {HomeMenuButton} from './HomeMenuScreen';
+import {Linking, View} from 'react-native';
+//import {ScrollView} from 'react-native-gesture-handler';
+import {IconTouchableOpacity} from '../../components/IconTouchableOpacity';
 
 export const MedicalNeedScreen = () => {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       {/*<ScrollView style={{flex: 1}}>*/}
-      <HomeMenuButton
+      <IconTouchableOpacity
         icon="calendar"
         title="Schedule Appointment"
         onPress={() => {
