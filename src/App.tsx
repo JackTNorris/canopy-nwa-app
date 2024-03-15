@@ -1,11 +1,12 @@
 import * as React from 'react';
+import 'react-native-gesture-handler';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {HomeScreen} from './screens/HomeScreen';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {NavigationContainer} from '@react-navigation/native';
 import {ProfileScreen} from './screens/ProfileScreen';
 import {VoiceControlScreen} from './screens/VoiceControlScreen';
-import { Header } from './components/Header';
+import {Header} from './components/Header';
 
 const Tab = createBottomTabNavigator();
 
