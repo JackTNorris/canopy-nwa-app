@@ -5,12 +5,14 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import {NavigationContainer} from '@react-navigation/native';
 import {ProfileScreen} from './screens/ProfileScreen';
 import {VoiceControlScreen} from './screens/VoiceControlScreen';
+import { Header } from './components/Header';
 
 const Tab = createBottomTabNavigator();
 
 export const App = () => {
   return (
     <NavigationContainer>
+      <Header />
       <Tab.Navigator screenOptions={{headerShown: false}}>
         <Tab.Screen
           name="Home"
