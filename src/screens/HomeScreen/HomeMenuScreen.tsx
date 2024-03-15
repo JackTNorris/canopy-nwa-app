@@ -2,7 +2,7 @@
 
 import {useNavigation} from '@react-navigation/core';
 import React from 'react';
-import {Linking} from 'react-native';
+import {Linking, StyleProp} from 'react-native';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -46,11 +46,19 @@ type HomeMenuButtonProps = {
   title: string;
   onPress: () => void;
   icon: string;
+  style?: StyleProp<any>;
 };
 
-const HomeMenuButton = ({title, onPress, icon}: HomeMenuButtonProps) => {
+export const HomeMenuButton = ({
+  title,
+  onPress,
+  icon,
+  style,
+}: HomeMenuButtonProps) => {
   return (
-    <TouchableOpacity style={styles.homeMenuButton} onPress={onPress}>
+    <TouchableOpacity
+      style={{...styles.homeMenuButton, ...style}}
+      onPress={onPress}>
       <MaterialCommunityIcons name={icon} color={'#ffa347'} size={50} />
       <Text>{title}</Text>
     </TouchableOpacity>
