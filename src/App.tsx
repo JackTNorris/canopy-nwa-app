@@ -13,7 +13,8 @@ export const App = () => {
   return (
     <NavigationContainer>
       <Header />
-      <Tab.Navigator screenOptions={{headerShown: false}}>
+      <Tab.Navigator
+        screenOptions={{headerShown: false, tabBarActiveTintColor: 'orange'}}>
         <Tab.Screen
           name="Home"
           component={HomeScreen}
