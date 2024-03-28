@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Dimensions, Image, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, Image, StyleSheet, View} from 'react-native';
 
 const styles = StyleSheet.create({
   header: {

@@ -14,6 +14,7 @@ export const App = () => {
   return (
     <NavigationContainer>
       <Header />
+      {/*check for async storage status that case manager inputted*/}
       <Tab.Navigator
         screenOptions={{headerShown: false, tabBarActiveTintColor: 'orange'}}>
         <Tab.Screen

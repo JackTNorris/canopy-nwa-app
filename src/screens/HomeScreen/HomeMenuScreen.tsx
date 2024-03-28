@@ -50,13 +50,6 @@ export const HomeMenuScreen = () => {
       icon: 'medical-bag',
     },
     {
-      title: 'Resources',
-      onPress: () => {
-        navigation.navigate('ResourcesScreen' as never);
-      },
-      icon: 'file-document-multiple',
-    },
-    {
       title: 'Learning Library',
       onPress: () => {
         navigation.navigate('LearningLibraryScreen' as never);
@@ -68,11 +61,10 @@ export const HomeMenuScreen = () => {
     <View style={{flex: 1, flexDirection: 'column', gap: 20}}>
       <View style={styles.homeMenuButtonRowContainerTop}>
         <IconTouchableOpacity {...MenuOptions[0]} />
-        <IconTouchableOpacity {...MenuOptions[1]} />
       </View>
       <View style={styles.homeMenuButtonRowContainerBottom}>
+        <IconTouchableOpacity {...MenuOptions[1]} />
         <IconTouchableOpacity {...MenuOptions[2]} />
-        <IconTouchableOpacity {...MenuOptions[3]} />
       </View>
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <TouchableOpacity

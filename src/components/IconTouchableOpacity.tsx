@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleProp, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {StyleProp, StyleSheet, Text, TouchableOpacity, Image} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const styles = StyleSheet.create({
@@ -12,7 +12,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     elevation: 10,
     shadowColor: 'orange',
-  }
+  },
+  communityClinic: {
+    height: 100,
+    width: 100,
+    resizeMode: 'center',
+  },
 });
 
 type IconTouchableOpacityProps = {
@@ -32,8 +37,17 @@ export const IconTouchableOpacity = ({
     <TouchableOpacity
       style={{...styles.defaultStyles, ...style}}
       onPress={onPress}>
-      <MaterialCommunityIcons name={icon} color={'#ffa347'} size={50} />
-      <Text>{title}</Text>
+      {icon === 'community-clinic' ? (
+        <Image
+          source={require('../assets/img/cclogo.png')}
+          style={styles.communityClinic}
+        />
+      ) : (
+        <>
+          <MaterialCommunityIcons name={icon} color={'#ffa347'} size={50} />
+          <Text>{title}</Text>
+        </>
+      )}
     </TouchableOpacity>
   );
 };
