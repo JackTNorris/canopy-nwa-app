@@ -1,22 +1,49 @@
 import * as React from 'react';
 import 'react-native-gesture-handler';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {HomeScreen} from './screens/RefugeeScreens/HomeScreen';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {ProfileScreen} from './screens/RefugeeScreens/ProfileScreen';
-import {VoiceControlScreen} from './screens/RefugeeScreens/VoiceControlScreen';
 import {Header} from './components/Header';
 import RefugeeScreens from './screens/RefugeeScreens';
 import CaseManagerScreen from './screens/CaseManagerScreen';
-const Tab = createBottomTabNavigator();
+import {USER_INFO_KEY, UserInfo} from './consts';
+import storage from './loaders/storage';
+import {ActivityIndicator, View} from 'react-native';
+import globalStyles from './global.styles';
 
 export const App = () => {
-  const [isSetup, setIsSetup] = React.useState(false);
+  const [userInfo, setUserInfo] = React.useState<UserInfo | null>(null);
+  const [isLoading, setIsLoading] = React.useState(false);
+  useEffect(() => {
+    const fetchUserInfo = async () => {
+      // load
+      setIsLoading(true);
+      try {
+        const data = (await storage.load({
+          key: USER_INFO_KEY,
+          autoSync: true,
+          syncInBackground: true,
+        })) as UserInfo;
+        setUserInfo(data);
+      } catch (error) {
+        console.log('Error loading user info', error);
+      }
+      setIsLoading(false);
+    };
+    fetchUserInfo();
+  }, []);
+
   return (
     <NavigationContainer>
       <Header />
-      {isSetup ? <RefugeeScreens /> : <CaseManagerScreen />}
+      {isLoading ? (
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+          <ActivityIndicator size="large" color={globalStyles.yellow.color} />
+        </View>
+      ) : userInfo ? (
+        <RefugeeScreens />
+      ) : (
+        <CaseManagerScreen onCompleteSignup={setUserInfo} />
+      )}
     </NavigationContainer>
   );
 };

@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
 });
 
-type IconTouchableOpacityProps = {
+export type IconTouchableOpacityProps = {
   title: string;
   onPress: () => void;
   icon: string;
