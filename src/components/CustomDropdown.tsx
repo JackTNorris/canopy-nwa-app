@@ -65,7 +65,6 @@ export const CustomDropdown = ({
         inputSearchStyle={styles.inputSearchStyle}
         iconStyle={styles.iconStyle}
         data={options}
-        search
         maxHeight={300}
         labelField="label"
         valueField="value"
