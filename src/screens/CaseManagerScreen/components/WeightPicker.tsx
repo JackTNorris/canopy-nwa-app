@@ -11,7 +11,7 @@ export const WeightPicker = ({onChange}: WeightPickerProps) => {
     <View style={{flexDirection: 'row'}}>
       <CustomDropdown
         placeholder="Weight (lb)"
-        options={_.range(0, 350).map(value => ({
+        options={_.range(70, 350).map(value => ({
           label: `${value}lb`,
           value: `${value}lb`,
         }))}

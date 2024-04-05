@@ -1,3 +1,5 @@
+//TODO: math with header
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {
   View,
@@ -20,12 +22,10 @@ const styles = StyleSheet.create({
 });
 
 export const WhereItHurts = () => {
+  const navigation = useNavigation();
+
   return (
-    <View
-      style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}
-      onTouchStart={e => {
-        console.log('touchMove', e.nativeEvent);
-      }}>
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Image
         style={{
           height: Dimensions.get('window').height * 0.8,
@@ -33,15 +33,28 @@ export const WhereItHurts = () => {
         }}
         source={require('@src/assets/img/human-body.png')}
       />
-      <TouchableOpacity style={{...styles.circle, top: 10}} />
+      <TouchableOpacity
+        id="head"
+        onPress={() => {
+          (navigation.navigate as any)('PainQuantifier', {bodyPart: 'head'});
+        }}
+        style={{...styles.circle, top: 10}}
+      />
       <TouchableOpacity
         style={{
           ...styles.circle,
           top: 120,
           left: Dimensions.get('screen').width / 2 - 40,
         }}
+        onPress={() => {
+          (navigation.navigate as any)('PainQuantifier', {bodyPart: 'chest'});
+        }}
       />
       <TouchableOpacity
+        id="stomach"
+        onPress={() => {
+          (navigation.navigate as any)('PainQuantifier', {bodyPart: 'stomach'});
+        }}
         style={{
           ...styles.circle,
           top: 200,

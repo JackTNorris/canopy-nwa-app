@@ -13,7 +13,7 @@ import {useEffect} from 'react';
 import storage from '@src/loaders/storage';
 import {USER_INFO_KEY, USER_PROFILE_PIC_KEY, UserInfo} from '@src/consts';
 import globalStyles from '@src/global.styles';
-import { launchImageLibrary} from 'react-native-image-picker';
+import {launchImageLibrary} from 'react-native-image-picker';
 
 const styles = StyleSheet.create({
   profilePic: {
@@ -29,6 +29,11 @@ const styles = StyleSheet.create({
     height: 100,
     width: 100,
     resizeMode: 'center',
+  },
+  attributeTitle: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    borderBottomWidth: 1,
   },
 });
 
@@ -108,14 +113,34 @@ export const ProfileScreen = () => {
           flex: 5,
           flexDirection: 'column',
           width: Dimensions.get('screen').width,
+          padding: 20,
         }}>
-        {Object.keys(userInfo).map((key: string) => {
-          return (
-            <Text key={key}>
-              {key.toUpperCase()}: {userInfo[key] as string}
-            </Text>
-          );
-        })}
+        <View style={{gap: 20}}>
+          <Text style={styles.attributeTitle}>
+            Blood Type:{' '}
+            <Text
+              style={{
+                fontWeight: 'normal',
+              }}>{`\n${userInfo.bloodType}`}</Text>{' '}
+          </Text>
+          <Text style={styles.attributeTitle}>
+            Weight:{' '}
+            <Text style={{fontWeight: 'normal'}}>{`\n${userInfo.weight}`}</Text>{' '}
+          </Text>
+          <Text style={styles.attributeTitle}>
+            Height:{' '}
+            <Text
+              style={{
+                fontWeight: 'normal',
+              }}>{`\n${userInfo.heightFeet}'${userInfo.heightInches}"`}</Text>{' '}
+          </Text>
+          <Text style={styles.attributeTitle}>
+            Allergies:{' '}
+            <Text style={{fontWeight: 'normal'}}>{`\n${
+              userInfo.allergy.join(', ') || 'None'
+            }`}</Text>
+          </Text>
+        </View>
       </View>
     </View>
   ) : (
