@@ -7,4 +7,10 @@ export default StyleSheet.create({
     justifyContent: 'center',
     height: '100%',
   },
+  blue: {
+    color: '#b9d2e7',
+  },
+  yellow: {
+    color: '#f3e6b9',
+  },
 });

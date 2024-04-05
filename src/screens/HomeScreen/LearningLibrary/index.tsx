@@ -1,10 +1,10 @@
 //TODO: refactor types
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {LearningLibraryMenuScreen} from './LearningLibrary/LearningLibraryMenuScreen';
-import {SeverityGuideScreen} from './LearningLibrary/SeverityGuideScreen';
-import {ClinicTypeScreen} from './LearningLibrary/ClinicTypeScreen';
-import {InsuranceScreen} from './LearningLibrary/InsuranceScreen';
+import {LearningLibraryMenuScreen} from './LearningLibraryMenuScreen';
+import {SeverityGuideScreen} from './SeverityGuideScreen';
+import {ClinicTypeScreen} from './ClinicTypeScreen';
+import {InsuranceScreen} from './InsuranceScreen';
 
 export type LearningLibraryRouteParams = {
   LearningLibraryMenuScreen: undefined;

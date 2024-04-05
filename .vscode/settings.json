@@ -1,0 +1,4 @@
+{
+    "editor.accessibilitySupport": "off",
+    "java.compile.nullAnalysis.mode": "disabled",
+}

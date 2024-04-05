@@ -43,9 +43,9 @@ export const HomeMenuScreen = () => {
       icon: 'bandage',
     },
     {
-      title: 'Medical Need',
+      title: 'Medical Resources',
       onPress: () => {
-        navigation.navigate('MedicalNeedScreen' as never);
+        navigation.navigate('MedicalResourcesScreen' as never);
       },
       icon: 'medical-bag',
     },
@@ -56,15 +56,23 @@ export const HomeMenuScreen = () => {
       },
       icon: 'bookshelf',
     },
+    {
+      title: 'Inbox',
+      onPress: () => {
+        navigation.navigate('InboxScreen' as never);
+      },
+      icon: 'inbox',
+    },
   ];
   return (
     <View style={{flex: 1, flexDirection: 'column', gap: 20}}>
       <View style={styles.homeMenuButtonRowContainerTop}>
         <IconTouchableOpacity {...MenuOptions[0]} />
+        <IconTouchableOpacity {...MenuOptions[1]} variant="yellow" />
       </View>
       <View style={styles.homeMenuButtonRowContainerBottom}>
-        <IconTouchableOpacity {...MenuOptions[1]} />
-        <IconTouchableOpacity {...MenuOptions[2]} />
+        <IconTouchableOpacity {...MenuOptions[2]} variant="yellow" />
+        <IconTouchableOpacity {...MenuOptions[3]} />
       </View>
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <TouchableOpacity

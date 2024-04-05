@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export const MedicalNeedScreen = () => {
+export const MedicalResourcesScreen = () => {
   const MenuOptions = [
     {
       title: 'Schedule an Appointment',

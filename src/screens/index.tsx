@@ -3,16 +3,15 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {HomeMenuScreen} from './HomeScreen/HomeMenuScreen';
 import {PainGuideScreen} from './HomeScreen/PainGuideScreen';
-import {MedicalNeedScreen} from './HomeScreen/MedicalNeedScreen';
-import {ResourcesScreen} from './HomeScreen/ResourcesScreen';
-import {LearningLibraryScreen} from './HomeScreen/LearningLibraryScreen';
-
+import {MedicalResourcesScreen} from './HomeScreen/MedicalResourcesScreen';
+import {LearningLibraryScreen} from './HomeScreen/LearningLibrary';
+import InboxScreen from './HomeScreen/Inbox';
 export type HomeScreenRouteParams = {
   HomeMenuScreen: undefined;
   PainGuideScreen: undefined;
-  MedicalNeedScreen: undefined;
-  ResourcesScreen: undefined;
+  MedicalResourcesScreen: undefined;
   LearningLibraryScreen: undefined;
+  InboxScreen: undefined;
 };
 
 const Stack = createStackNavigator<HomeScreenRouteParams>();
@@ -22,8 +21,11 @@ export const HomeScreen = () => {
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="HomeMenuScreen" component={HomeMenuScreen} />
       <Stack.Screen name="PainGuideScreen" component={PainGuideScreen} />
-      <Stack.Screen name="MedicalNeedScreen" component={MedicalNeedScreen} />
-      <Stack.Screen name="ResourcesScreen" component={ResourcesScreen} />
+      <Stack.Screen
+        name="MedicalResourcesScreen"
+        component={MedicalResourcesScreen}
+      />
+      <Stack.Screen name="InboxScreen" component={InboxScreen} />
       <Stack.Screen
         name="LearningLibraryScreen"
         component={LearningLibraryScreen}

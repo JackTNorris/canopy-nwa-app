@@ -1,7 +1,7 @@
 import * as React from 'react';
 import 'react-native-gesture-handler';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {HomeScreen} from './screens/HomeScreen';
+import {HomeScreen} from './screens';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {NavigationContainer} from '@react-navigation/native';
 import {ProfileScreen} from './screens/ProfileScreen';

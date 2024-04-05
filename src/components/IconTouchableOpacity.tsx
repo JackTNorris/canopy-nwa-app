@@ -1,17 +1,16 @@
 import React from 'react';
 import {StyleProp, StyleSheet, Text, TouchableOpacity, Image} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import globalStyles from '@src/global.styles';
 
 const styles = StyleSheet.create({
   defaultStyles: {
     width: 150,
     height: 150,
-    backgroundColor: '#b2e8f7',
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
     elevation: 10,
-    shadowColor: 'orange',
   },
   communityClinic: {
     height: 100,
@@ -25,6 +24,7 @@ type IconTouchableOpacityProps = {
   onPress: () => void;
   icon: string;
   style?: StyleProp<any>;
+  variant?: 'blue' | 'yellow';
 };
 
 export const IconTouchableOpacity = ({
@@ -32,10 +32,18 @@ export const IconTouchableOpacity = ({
   onPress,
   icon,
   style,
+  variant = 'blue',
 }: IconTouchableOpacityProps) => {
   return (
     <TouchableOpacity
-      style={{...styles.defaultStyles, ...style}}
+      style={{
+        ...styles.defaultStyles,
+        ...style,
+        backgroundColor:
+          variant === 'blue'
+            ? globalStyles.blue.color
+            : globalStyles.yellow.color,
+      }}
       onPress={onPress}>
       {icon === 'community-clinic' ? (
         <Image
@@ -44,7 +52,7 @@ export const IconTouchableOpacity = ({
         />
       ) : (
         <>
-          <MaterialCommunityIcons name={icon} color={'#ffa347'} size={50} />
+          <MaterialCommunityIcons name={icon} color={'black'} size={50} />
           <Text>{title}</Text>
         </>
       )}
