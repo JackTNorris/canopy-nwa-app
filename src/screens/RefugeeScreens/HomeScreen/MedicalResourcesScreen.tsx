@@ -2,7 +2,7 @@
 //TODO: change find a hospital links
 import {IconTouchableOpacity} from '../../../components/IconTouchableOpacity';
 import React from 'react';
-import {Linking} from 'react-native';
+import {Alert, Linking} from 'react-native';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 const styles = StyleSheet.create({
@@ -45,7 +45,7 @@ export const MedicalResourcesScreen = () => {
     {
       title: 'Find a Hospital',
       onPress: () => {
-        Linking.openURL('https://maps.app.goo.gl/WZ1yMwKeoJDQukdn8');
+        Linking.openURL('https://maps.app.goo.gl/NSnDcZ7pgNz5hppm6');
       },
       icon: 'google-maps',
     },
@@ -56,15 +56,39 @@ export const MedicalResourcesScreen = () => {
       },
       icon: 'community-clinic',
     },
+    {
+      title: 'Medical Transport',
+      onPress: () => {
+        Alert.alert(
+          'Medical Transport',
+          'Call or email Community Clinic 1 day in advance before your appointment',
+          [
+            {
+              text: 'Email',
+              onPress: () =>
+                Linking.openURL('mailto:info@communityclinicnwa.org'),
+            },
+            {
+              text: 'Call',
+              onPress: () => Linking.openURL('tel: 8554382280'),
+              style: 'cancel',
+            },
+            {text: 'OK', onPress: () => {}},
+          ],
+        );
+      },
+      icon: 'ambulance',
+    },
   ];
   return (
     <View style={{flex: 1, flexDirection: 'column', gap: 20}}>
       <View style={styles.homeMenuButtonRowContainerTop}>
         <IconTouchableOpacity {...MenuOptions[0]} />
+        <IconTouchableOpacity {...MenuOptions[1]} variant="yellow" />
       </View>
       <View style={styles.homeMenuButtonRowContainerBottom}>
-        <IconTouchableOpacity {...MenuOptions[1]} />
-        <IconTouchableOpacity {...MenuOptions[2]} />
+        <IconTouchableOpacity {...MenuOptions[2]} variant="yellow" />
+        <IconTouchableOpacity {...MenuOptions[3]} />
       </View>
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <TouchableOpacity

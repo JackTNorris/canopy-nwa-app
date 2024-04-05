@@ -1,3 +1,4 @@
+//TODO: maybe refactor user info to a redux store (unlikely tho)
 import * as React from 'react';
 import 'react-native-gesture-handler';
 import {useEffect} from 'react';
@@ -12,11 +13,10 @@ import globalStyles from './global.styles';
 
 export const App = () => {
   const [userInfo, setUserInfo] = React.useState<UserInfo | null>(null);
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(true);
   useEffect(() => {
     const fetchUserInfo = async () => {
       // load
-      setIsLoading(true);
       try {
         const data = (await storage.load({
           key: USER_INFO_KEY,
@@ -31,7 +31,8 @@ export const App = () => {
     };
     fetchUserInfo();
   }, []);
-
+  console.log("USER INFO IS: ")
+  console.log(userInfo);
   return (
     <NavigationContainer>
       <Header />
@@ -39,7 +40,7 @@ export const App = () => {
         <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
           <ActivityIndicator size="large" color={globalStyles.yellow.color} />
         </View>
-      ) : userInfo ? (
+      ) : userInfo?.refugeeName ? (
         <RefugeeScreens />
       ) : (
         <CaseManagerScreen onCompleteSignup={setUserInfo} />
