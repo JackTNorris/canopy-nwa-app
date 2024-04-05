@@ -1,3 +1,4 @@
+//TODO: do more math for this so some things scale abetter
 import * as React from 'react';
 import {Dimensions, Image, StyleSheet, View} from 'react-native';
 

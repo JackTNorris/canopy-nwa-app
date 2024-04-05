@@ -36,7 +36,10 @@ export const WhereItHurts = () => {
       <TouchableOpacity
         id="head"
         onPress={() => {
-          (navigation.navigate as any)('PainQuantifier', {bodyPart: 'head'});
+          (navigation.navigate as any)('PainQuantifier', {
+            bodyPart: 'head',
+            asset: require('@src/assets/img/head.png'),
+          });
         }}
         style={{...styles.circle, top: 10}}
       />
@@ -47,13 +50,19 @@ export const WhereItHurts = () => {
           left: Dimensions.get('screen').width / 2 - 40,
         }}
         onPress={() => {
-          (navigation.navigate as any)('PainQuantifier', {bodyPart: 'chest'});
+          (navigation.navigate as any)('PainQuantifier', {
+            bodyPart: 'chest',
+            asset: require('@src/assets/img/chest.png'),
+          });
         }}
       />
       <TouchableOpacity
         id="stomach"
         onPress={() => {
-          (navigation.navigate as any)('PainQuantifier', {bodyPart: 'stomach'});
+          (navigation.navigate as any)('PainQuantifier', {
+            bodyPart: 'stomach',
+            asset: require('@src/assets/img/stomach.png'),
+          });
         }}
         style={{
           ...styles.circle,
