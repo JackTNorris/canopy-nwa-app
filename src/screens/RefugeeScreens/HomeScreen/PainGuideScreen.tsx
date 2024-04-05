@@ -13,7 +13,7 @@ export const PainGuideScreen = () => {
           height: 550,
           aspectRatio: 0.5,
         }}
-        source={require('../../assets/img/human-body.png')}
+        source={require('../../../assets/img/human-body.png')}
       />
     </View>
   );

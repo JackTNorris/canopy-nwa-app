@@ -1,6 +1,6 @@
 //TODO: fix never conversion
 //TODO: change find a hospital links
-import {IconTouchableOpacity} from '../../components/IconTouchableOpacity';
+import {IconTouchableOpacity} from '../../../components/IconTouchableOpacity';
 import React from 'react';
 import {Linking} from 'react-native';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';

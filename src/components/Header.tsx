@@ -8,9 +8,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: Dimensions.get('screen').height * 0.15,
     maxHeight: 100,
-    shadowColor: 'green',
     shadowOpacity: 0.5,
-    elevation: 10,
+    borderColor: 'black',
+    borderBottomWidth: 0.2,
   },
   headerImage: {
     resizeMode: 'center',

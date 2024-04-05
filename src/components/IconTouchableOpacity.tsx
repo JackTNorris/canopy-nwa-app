@@ -1,5 +1,11 @@
 import React from 'react';
-import {StyleProp, StyleSheet, Text, TouchableOpacity, Image} from 'react-native';
+import {
+  StyleProp,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  Image,
+} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import globalStyles from '@src/global.styles';
 

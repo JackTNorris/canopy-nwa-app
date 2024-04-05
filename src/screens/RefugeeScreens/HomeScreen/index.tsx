@@ -1,11 +1,11 @@
 //TODO: refactor types
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {HomeMenuScreen} from './HomeScreen/HomeMenuScreen';
-import {PainGuideScreen} from './HomeScreen/PainGuideScreen';
-import {MedicalResourcesScreen} from './HomeScreen/MedicalResourcesScreen';
-import {LearningLibraryScreen} from './HomeScreen/LearningLibrary';
-import InboxScreen from './HomeScreen/Inbox';
+import {HomeMenuScreen} from './HomeMenuScreen';
+import {PainGuideScreen} from './PainGuideScreen';
+import {MedicalResourcesScreen} from './MedicalResourcesScreen';
+import {LearningLibraryScreen} from './LearningLibrary';
+import InboxScreen from './Inbox';
 export type HomeScreenRouteParams = {
   HomeMenuScreen: undefined;
   PainGuideScreen: undefined;

@@ -1,7 +1,7 @@
 //TODO: fix never casting
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {IconTouchableOpacity} from '../../../components/IconTouchableOpacity';
+import {IconTouchableOpacity} from '../../../../components/IconTouchableOpacity';
 import {Dimensions, StyleSheet, Text, View} from 'react-native';
 
 const style = StyleSheet.create({

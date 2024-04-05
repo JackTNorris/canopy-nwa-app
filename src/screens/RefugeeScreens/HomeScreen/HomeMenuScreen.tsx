@@ -1,5 +1,5 @@
 //TODO: fix never conversion
-import {IconTouchableOpacity} from '../../components/IconTouchableOpacity';
+import {IconTouchableOpacity} from '../../../components/IconTouchableOpacity';
 import {useNavigation} from '@react-navigation/core';
 import React from 'react';
 import {Linking} from 'react-native';
