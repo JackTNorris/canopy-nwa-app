@@ -14,8 +14,8 @@ import storage from '@src/loaders/storage';
 import {USER_INFO_KEY, USER_PROFILE_PIC_KEY, UserInfo} from '@src/consts';
 import globalStyles from '@src/global.styles';
 import {launchImageLibrary} from 'react-native-image-picker';
-import {VaccineModal} from '@src/screens/RefugeeScreens/ProfileScreen/components/VaccineModal';
 import {useNavigation} from '@react-navigation/native';
+import {AddVaccineModal} from '../components/AddVaccineModal';
 
 const styles = StyleSheet.create({
   profilePic: {
@@ -97,7 +97,7 @@ export const ProfileScreen = () => {
 
   return !isLoading && userInfo ? (
     <View style={{flex: 1, flexDirection: 'column', alignItems: 'center'}}>
-      <VaccineModal
+      <AddVaccineModal
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
       />

@@ -1,9 +1,10 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 export type CustomTableProps = {
   headers: string[];
   data: string[][];
+  onClickRow?: (rowNume: number) => void;
   style?: StyleSheet.NamedStyles<any>;
 };
 
@@ -23,7 +24,6 @@ const styles = StyleSheet.create({
   cell: {
     flex: 1,
     padding: 5,
-    margin: 5,
     borderWidth: 1,
   },
   headerContainer: {
@@ -42,14 +42,21 @@ export const CustomTable = ({data, headers, style}: CustomTableProps) => {
         {headers.map((header, index) => {
           return (
             <View style={styles.headerContainer} key={index}>
-              <Text style={{textAlign: 'center', fontWeight: 'bold', borderBottomWidth: 2}}>{header}</Text>
+              <Text
+                style={{
+                  textAlign: 'center',
+                  fontWeight: 'bold',
+                  borderBottomWidth: 2,
+                }}>
+                {header}
+              </Text>
             </View>
           );
         })}
       </View>
       {data.map((row, index) => {
         return (
-          <View style={styles.col} key={index}>
+          <TouchableOpacity style={styles.col} key={index}>
             {row.map((cell, index) => {
               return (
                 <View style={styles.cell} key={index}>
@@ -57,7 +64,7 @@ export const CustomTable = ({data, headers, style}: CustomTableProps) => {
                 </View>
               );
             })}
-          </View>
+          </TouchableOpacity>
         );
       })}
     </View>

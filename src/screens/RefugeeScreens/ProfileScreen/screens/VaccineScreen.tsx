@@ -1,6 +1,12 @@
 //TODO: get rid of inline styles
 import * as React from 'react';
-import {Dimensions, Text, View, StyleSheet} from 'react-native';
+import {
+  Dimensions,
+  Text,
+  View,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 import {useEffect} from 'react';
 import storage from '@src/loaders/storage';
 import {
@@ -9,8 +15,8 @@ import {
   UserInfo,
   VaccineInfo,
 } from '@src/consts';
-import {VaccineModal} from '@src/screens/RefugeeScreens/ProfileScreen/components/VaccineModal';
 import {CustomTable} from '@src/components/CustomTable';
+import { AddVaccineModal } from '../components/AddVaccineModal';
 
 const styles = StyleSheet.create({
   profilePic: {
@@ -37,8 +43,9 @@ const styles = StyleSheet.create({
     padding: 10,
     elevation: 2,
   },
-  buttonOpen: {
-    backgroundColor: '#F194FF',
+  addVaccineButton: {
+    backgroundColor: 'orange',
+    margin: 10,
   },
   buttonClose: {
     backgroundColor: '#2196F3',
@@ -95,15 +102,21 @@ export const VaccineScreen = () => {
   }, []);
 
   return (
-    /*!isLoading && vaccineInfo ?*/ <View
-      style={{flex: 1, flexDirection: 'column', alignItems: 'center'}}>
-      <VaccineModal
+    /*!isLoading && vaccineInfo ?*/
+    <View
+      style={{
+        flex: 1,
+        flexDirection: 'column',
+        alignItems: 'center',
+        height: Dimensions.get('screen').height,
+      }}>
+      <AddVaccineModal
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
       />
       <View
         style={{
-          flex: 5,
+          flex: 1,
           flexDirection: 'column',
           width: Dimensions.get('screen').width,
           padding: 10,
@@ -119,6 +132,9 @@ export const VaccineScreen = () => {
         </Text>
         <CustomTable
           headers={['Vaccine Name', 'Date']}
+          onClickRow={index => {
+            console.log(index);
+          }}
           data={[
             ['a', 'b'],
             ['a', 'b'],
@@ -126,6 +142,13 @@ export const VaccineScreen = () => {
           ]}
         />
       </View>
+      <TouchableOpacity
+        style={[styles.button, styles.addVaccineButton]}
+        onPress={() => {
+          setModalVisible(!modalVisible);
+        }}>
+        <Text style={styles.textStyle}>Add Vaccine</Text>
+      </TouchableOpacity>
     </View>
   ); /*: (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>

@@ -1,14 +1,16 @@
 import React, {useState} from 'react';
-import {TextInput, StyleSheet} from 'react-native';
+import {TextInput, StyleSheet, StyleProp} from 'react-native';
 
 export type CustomTextInputProps = {
   placeholder: string;
   onChange: (text: string) => void;
+  style?: StyleProp<any>;
 };
 
 export const CustomTextInput = ({
   placeholder,
   onChange,
+  style
 }: CustomTextInputProps) => {
   const [text, setText] = useState('');
 
@@ -19,7 +21,7 @@ export const CustomTextInput = ({
 
   return (
     <TextInput
-      style={styles.input}
+      style={{...styles.input, ...style}}
       onChangeText={handleChangeText}
       value={text}
       placeholder={placeholder}

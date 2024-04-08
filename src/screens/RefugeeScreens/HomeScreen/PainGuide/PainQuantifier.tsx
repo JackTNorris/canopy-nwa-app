@@ -11,6 +11,11 @@ const styles = StyleSheet.create({
 });
 
 export const PainQuantifier = () => {
+
+  const [pain, setPain] = React.useState(0);
+  const [tingling, setTingling] = React.useState(0);
+  const [swelling, setSwelling] = React.useState(0);
+
   const route = useRoute();
   return (
     <View style={{flex: 1, alignItems: 'center'}}>
@@ -22,11 +27,11 @@ export const PainQuantifier = () => {
         source={(route.params as any).asset}
       />
       <Text style={styles.labels}>Pain?</Text>
-      <ColorForm />
+      <ColorForm setSelectedIndex={setPain} selectedIndex={pain} />
       <Text style={styles.labels}>Tingling?</Text>
-      <ColorForm />
+      <ColorForm setSelectedIndex={setTingling} selectedIndex={tingling} />
       <Text style={styles.labels}>Swelling?</Text>
-      <ColorForm />
+      <ColorForm setSelectedIndex={setSwelling} selectedIndex={setSwelling} />
       {/*<Text style={{...styles.labels, padding: 20}}>Swelling?</Text>J*/}
     </View>
   );

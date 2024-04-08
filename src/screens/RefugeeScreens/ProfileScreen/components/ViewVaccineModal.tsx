@@ -1,3 +1,4 @@
+//TODO: refactor some styles for this
 import * as React from 'react';
 import {Text, View, StyleSheet, Modal, Alert, Pressable} from 'react-native';
 
@@ -6,12 +7,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 22,
   },
   modalView: {
     margin: 20,
     backgroundColor: 'white',
     borderRadius: 20,
+    width: '80%',
+    height: '60%',
     padding: 35,
     alignItems: 'center',
     shadowColor: '#000',
@@ -45,22 +47,21 @@ const styles = StyleSheet.create({
   },
 });
 
-export type VaccineModalProps = {
+export type ViewVaccineModalProps = {
   modalVisible: boolean;
   setModalVisible: (visible: boolean) => void;
 };
 
-export const VaccineModal = ({
+export const ViewVaccineModal = ({
   modalVisible,
   setModalVisible,
-}: VaccineModalProps) => {
+}: ViewVaccineModalProps) => {
   return (
     <Modal
       animationType="slide"
       transparent={true}
       visible={modalVisible}
       onRequestClose={() => {
-        Alert.alert('Modal has been closed.');
         setModalVisible(!modalVisible);
       }}>
       <View style={styles.centeredView}>

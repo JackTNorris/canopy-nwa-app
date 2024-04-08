@@ -17,8 +17,12 @@ const styles = StyleSheet.create({
   },
 });
 
-export const ColorForm = () => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
+export type ColorFormProps = {
+  selectedIndex: number;
+  setSelectedIndex: (index: number) => void;
+};
+
+export const ColorForm = ({selectedIndex, setSelectedIndex}) => {
   const gradient = [
     '#00FF00',
     '#1CE200',
