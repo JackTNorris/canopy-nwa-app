@@ -1,5 +1,6 @@
 //TODO: fix never conversion
 //TODO: change find a hospital links
+import { EmergencyButton } from '@src/components/EmergencyButton';
 import {IconTouchableOpacity} from '../../../components/IconTouchableOpacity';
 import React from 'react';
 import {Alert, Linking} from 'react-native';
@@ -91,15 +92,7 @@ export const MedicalResourcesScreen = () => {
         <IconTouchableOpacity {...MenuOptions[3]} />
       </View>
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <TouchableOpacity
-          style={styles.emergencyButton}
-          onPress={() => {
-            Linking.openURL('tel:911');
-          }}>
-          <Text style={{fontSize: 20, color: 'white', fontWeight: 'bold'}}>
-            Emergency
-          </Text>
-        </TouchableOpacity>
+        <EmergencyButton />
       </View>
     </View>
   );

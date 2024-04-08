@@ -1,4 +1,5 @@
 //TODO: fix never conversion
+import { EmergencyButton } from '@src/components/EmergencyButton';
 import {IconTouchableOpacity} from '../../../components/IconTouchableOpacity';
 import {useNavigation} from '@react-navigation/core';
 import React from 'react';
@@ -75,15 +76,7 @@ export const HomeMenuScreen = () => {
         <IconTouchableOpacity {...MenuOptions[3]} />
       </View>
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <TouchableOpacity
-          style={styles.emergencyButton}
-          onPress={() => {
-            Linking.openURL('tel:911');
-          }}>
-          <Text style={{fontSize: 20, color: 'white', fontWeight: 'bold'}}>
-            Emergency
-          </Text>
-        </TouchableOpacity>
+        <EmergencyButton />
       </View>
     </View>
   );
