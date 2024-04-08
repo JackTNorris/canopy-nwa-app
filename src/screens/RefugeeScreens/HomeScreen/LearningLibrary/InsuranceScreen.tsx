@@ -11,17 +11,16 @@ export const InsuranceScreen = () => {
           How to use my insurance card:
         </Text>
         <View
-            style={{
-              padding: 20,
-              margin: 20,
-              borderRadius: 10,
-              backgroundColor: globalStyles.yellow.color,
-            }}>
-            <Text
-              style={{fontSize: 15, fontWeight: 'bold', textAlign: 'center'}}>
-              Always have it with you and present at the front desk
-            </Text>
-          </View>
+          style={{
+            padding: 20,
+            margin: 20,
+            borderRadius: 10,
+            backgroundColor: globalStyles.yellow.color,
+          }}>
+          <Text style={{fontSize: 15, fontWeight: 'bold', textAlign: 'center'}}>
+            Always have it with you and present at the front desk
+          </Text>
+        </View>
       </View>
       <View>
         <Text style={{fontSize: 24, fontWeight: 'bold', textAlign: 'center'}}>
