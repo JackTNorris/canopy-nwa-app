@@ -1,10 +1,9 @@
 //TODO: fix never conversion
-import { EmergencyButton } from '@src/components/EmergencyButton';
+import {EmergencyButton} from '@src/components/EmergencyButton';
 import {IconTouchableOpacity} from '../../../components/IconTouchableOpacity';
 import {useNavigation} from '@react-navigation/core';
 import React from 'react';
-import {Linking} from 'react-native';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
 const styles = StyleSheet.create({
   homeMenuButtonRowContainerTop: {

@@ -1,10 +1,10 @@
 //TODO: fix never conversion
 //TODO: change find a hospital links
-import { EmergencyButton } from '@src/components/EmergencyButton';
+import {EmergencyButton} from '@src/components/EmergencyButton';
 import {IconTouchableOpacity} from '../../../components/IconTouchableOpacity';
 import React from 'react';
 import {Alert, Linking} from 'react-native';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
 const styles = StyleSheet.create({
   homeMenuButtonRowContainerTop: {

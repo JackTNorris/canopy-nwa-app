@@ -8,3 +8,9 @@ export type UserInfo = {
   bloodType: string;
   refugeeName: string;
 };
+
+export type VaccineInfo = {
+  vaccineName: string;
+  vaccineDate: string;
+  vaccineSrc: string;
+};

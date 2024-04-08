@@ -1,6 +1,6 @@
 import React from 'react';
 import {useRoute} from '@react-navigation/native';
-import {View, Text, Image, Dimensions, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet} from 'react-native';
 import {ColorForm} from './components/ColorForm';
 
 const styles = StyleSheet.create({

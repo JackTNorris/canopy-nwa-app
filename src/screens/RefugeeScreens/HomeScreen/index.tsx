@@ -5,7 +5,7 @@ import {HomeMenuScreen} from './HomeMenuScreen';
 import {MedicalResourcesScreen} from './MedicalResourcesScreen';
 import {LearningLibraryScreen} from './LearningLibrary';
 import InboxScreen from './Inbox';
-import { PainGuide } from './PainGuide';
+import {PainGuide} from './PainGuide';
 export type HomeScreenRouteParams = {
   HomeMenuScreen: undefined;
   PainGuideScreen: undefined;

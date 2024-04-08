@@ -4,7 +4,7 @@ import 'react-native-gesture-handler';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {HomeScreen} from './HomeScreen';
-import {ProfileScreen} from './ProfileScreen';
+import {Profile} from './ProfileScreen';
 import {VoiceControlScreen} from './VoiceControlScreen';
 
 const Tab = createBottomTabNavigator();
@@ -26,7 +26,7 @@ const RefugeeScreens = () => {
       />
       <Tab.Screen
         name="Profile"
-        component={ProfileScreen}
+        component={Profile}
         options={{
           tabBarLabel: 'Profile',
           // eslint-disable-next-line react/no-unstable-nested-components

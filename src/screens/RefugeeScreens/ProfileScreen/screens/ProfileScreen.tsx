@@ -14,6 +14,8 @@ import storage from '@src/loaders/storage';
 import {USER_INFO_KEY, USER_PROFILE_PIC_KEY, UserInfo} from '@src/consts';
 import globalStyles from '@src/global.styles';
 import {launchImageLibrary} from 'react-native-image-picker';
+import {VaccineModal} from '@src/screens/RefugeeScreens/ProfileScreen/components/VaccineModal';
+import {useNavigation} from '@react-navigation/native';
 
 const styles = StyleSheet.create({
   profilePic: {
@@ -35,12 +37,27 @@ const styles = StyleSheet.create({
     fontSize: 20,
     borderBottomWidth: 1,
   },
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2,
+  },
+  buttonOpen: {
+    backgroundColor: 'orange',
+  },
+  textStyle: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
 });
 
 export const ProfileScreen = () => {
   const [isLoading, setIsLoading] = React.useState(false);
   const [userInfo, setUserInfo] = React.useState<UserInfo | null>(null);
   const [profilePic, setProfilePic] = React.useState<string | null>(null);
+  const [modalVisible, setModalVisible] = React.useState(false);
+  const navigation = useNavigation();
 
   const updateProfilePicture = async (uri: string) => {
     setIsLoading(true);
@@ -80,7 +97,11 @@ export const ProfileScreen = () => {
 
   return !isLoading && userInfo ? (
     <View style={{flex: 1, flexDirection: 'column', alignItems: 'center'}}>
-      <Text style={{fontSize: 25, padding: 20, fontWeight: 'bold'}}>
+      <VaccineModal
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+      />
+      <Text style={{fontSize: 25, padding: 10, fontWeight: 'bold'}}>
         Hi {userInfo.refugeeName.split(' ')[0]}!
       </Text>
       <TouchableOpacity
@@ -113,7 +134,7 @@ export const ProfileScreen = () => {
           flex: 5,
           flexDirection: 'column',
           width: Dimensions.get('screen').width,
-          padding: 20,
+          padding: 10,
         }}>
         <View style={{gap: 20}}>
           <Text style={styles.attributeTitle}>
@@ -140,6 +161,11 @@ export const ProfileScreen = () => {
               userInfo.allergy.join(', ') || 'None'
             }`}</Text>
           </Text>
+          <TouchableOpacity
+            style={[styles.button, styles.buttonOpen]}
+            onPress={() => navigation.navigate('VaccineScreen' as never)}>
+            <Text style={styles.textStyle}>My Vaccines</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
