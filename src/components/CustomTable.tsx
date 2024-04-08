@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, StyleProp} from 'react-native';
 
 export type CustomTableProps = {
   headers: string[];
   data: string[][];
   onClickRow?: (rowNume: number) => void;
-  style?: StyleSheet.NamedStyles<any>;
+  style?: StyleProp<any>;
 };
 
 const styles = StyleSheet.create({
