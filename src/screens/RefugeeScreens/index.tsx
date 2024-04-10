@@ -12,7 +12,12 @@ const Tab = createBottomTabNavigator();
 const RefugeeScreens = () => {
   return (
     <Tab.Navigator
-      screenOptions={{headerShown: false, tabBarActiveTintColor: 'orange', tabBarHideOnKeyboard: true}}>
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: 'orange',
+        tabBarHideOnKeyboard: true,
+      }}
+      detachInactiveScreens={false}>
       <Tab.Screen
         name="Home"
         component={HomeScreen}

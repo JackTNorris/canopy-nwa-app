@@ -1,7 +1,7 @@
 import globalStyles from '@src/global.styles';
 import React from 'react';
 
-import {Text, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 
 export const SeverityGuideScreen = () => {
@@ -9,7 +9,7 @@ export const SeverityGuideScreen = () => {
     <View style={{flex: 1, padding: 10}}>
       <ScrollView>
         <View>
-          <View
+          <TouchableOpacity
             style={{
               padding: 20,
               margin: 20,
@@ -20,8 +20,8 @@ export const SeverityGuideScreen = () => {
               style={{fontSize: 25, fontWeight: 'bold', textAlign: 'center'}}>
               Emergency room
             </Text>
-          </View>
-          <View
+          </TouchableOpacity>
+          <TouchableOpacity
             style={{
               padding: 20,
               margin: 20,
@@ -32,8 +32,8 @@ export const SeverityGuideScreen = () => {
               style={{fontSize: 25, fontWeight: 'bold', textAlign: 'center'}}>
               Urgent Care (walk-in)
             </Text>
-          </View>
-          <View
+          </TouchableOpacity>
+          <TouchableOpacity
             style={{
               padding: 20,
               margin: 20,
@@ -44,8 +44,8 @@ export const SeverityGuideScreen = () => {
               style={{fontSize: 25, fontWeight: 'bold', textAlign: 'center'}}>
               Scheduled primary care appointment
             </Text>
-          </View>
-          <View
+          </TouchableOpacity>
+          <TouchableOpacity
             style={{
               padding: 20,
               margin: 20,
@@ -56,7 +56,7 @@ export const SeverityGuideScreen = () => {
               style={{fontSize: 25, fontWeight: 'bold', textAlign: 'center'}}>
               Stay home / OTC
             </Text>
-          </View>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </View>
