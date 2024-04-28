@@ -1,3 +1,4 @@
+import { translations } from '@src/consts';
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, Linking, Alert} from 'react-native';
 
@@ -15,7 +16,11 @@ const styles = StyleSheet.create({
   },
 });
 
-export const EmergencyButton = () => {
+export type EmergencyButtonProps = {
+  isSpanish?: boolean;
+};
+
+export const EmergencyButton = ({isSpanish}: EmergencyButtonProps) => {
   return (
     <TouchableOpacity
       style={styles.emergencyButton}
@@ -37,7 +42,7 @@ export const EmergencyButton = () => {
         );
       }}>
       <Text style={{fontSize: 20, color: 'white', fontWeight: 'bold'}}>
-        Emergency
+        {isSpanish ? translations['Emergency'] : 'Emergency'}
       </Text>
     </TouchableOpacity>
   );

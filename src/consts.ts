@@ -1,6 +1,7 @@
 export const USER_INFO_KEY = 'USERINFO';
 export const USER_PROFILE_PIC_KEY = 'USERPROFILEPIC';
 export const USER_VACCINES_KEY = 'USERVACC';
+export const LANGUAGE_PREFERENCE = 'LANGUAGE_PREFERENCE';
 
 export type UserInfo = {
   allergy: string[];
@@ -19,6 +20,16 @@ export type VaccineInfo = {
 
 export type SymptomGroup = {
   [group: string]: string[];
+};
+export const translations = {
+  'Pain Guide': 'Guía de Dolor',
+  'Medical Resources': 'Recursos Médicos',
+  'Learning Library': 'Biblioteca de Aprendizaje',
+  Inbox: 'Mensajes',
+  Emergency: 'Emergencia',
+  Home: 'Inicio',
+  Profile: 'Perfil',
+  'Voice Control': 'Control de Voz',
 };
 
 export const symptomGroup: SymptomGroup = {

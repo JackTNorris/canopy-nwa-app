@@ -16,10 +16,14 @@ export type HomeScreenRouteParams = {
 
 const Stack = createStackNavigator<HomeScreenRouteParams>();
 
-export const HomeScreen = () => {
+export type HomeScreenProps = {
+  isSpanish: boolean;
+}
+
+export const HomeScreen = ({isSpanish}: HomeScreenProps) => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="HomeMenuScreen" component={HomeMenuScreen} />
+      <Stack.Screen name="HomeMenuScreen" children={() => <HomeMenuScreen isSpanish={isSpanish} />} />
       <Stack.Screen name="PainGuideScreen" component={PainGuide} />
       <Stack.Screen
         name="MedicalResourcesScreen"

@@ -4,6 +4,7 @@ import {IconTouchableOpacity} from '../../../components/IconTouchableOpacity';
 import {useNavigation} from '@react-navigation/core';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
+import {translations} from '@src/consts';
 
 const styles = StyleSheet.create({
   homeMenuButtonRowContainerTop: {
@@ -30,34 +31,38 @@ const styles = StyleSheet.create({
     shadowColor: 'orange',
   },
 });
-
-export const HomeMenuScreen = () => {
+export type HomeMenuScreenProps = {
+  isSpanish: boolean;
+};
+export const HomeMenuScreen = ({isSpanish}: HomeMenuScreenProps) => {
   const navigation = useNavigation();
 
   const MenuOptions = [
     {
-      title: 'Pain Guide',
+      title: isSpanish ? translations['Pain Guide'] : 'Pain Guide',
       onPress: () => {
         navigation.navigate('PainGuideScreen' as never);
       },
       icon: 'bandage',
     },
     {
-      title: 'Medical Resources',
+      title: isSpanish
+        ? translations['Medical Resources']
+        : 'Medical Resources',
       onPress: () => {
         navigation.navigate('MedicalResourcesScreen' as never);
       },
       icon: 'medical-bag',
     },
     {
-      title: 'Learning Library',
+      title: isSpanish ? translations['Learning Library'] : 'Learning Library',
       onPress: () => {
         navigation.navigate('LearningLibraryScreen' as never);
       },
       icon: 'bookshelf',
     },
     {
-      title: 'Inbox',
+      title: isSpanish ? translations['Inbox'] : 'Inbox',
       onPress: () => {
         navigation.navigate('InboxScreen' as never);
       },
@@ -75,7 +80,7 @@ export const HomeMenuScreen = () => {
         <IconTouchableOpacity {...MenuOptions[3]} />
       </View>
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <EmergencyButton />
+        <EmergencyButton isSpanish={isSpanish} />
       </View>
     </View>
   );
