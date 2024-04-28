@@ -1,4 +1,5 @@
 //TODO: refactor functionality to be more modular, too much functionality just in this componenent
+// TODO: need a config file that lists key words to search through for each item, not just "swollen foot"
 import {IconTouchableOpacity} from '@src/components/IconTouchableOpacity';
 import globalStyles from '@src/global.styles';
 import React, {useState} from 'react';
@@ -7,7 +8,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {SeverityCategorySelector} from './SeverityCategorySelector';
 import {conditionSymptomPairing, symptomGroup} from '@src/consts';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 export const SeverityGuideSearch = () => {
   const [searchInput, setSearchInput] = useState<string>('');
@@ -16,7 +17,11 @@ export const SeverityGuideSearch = () => {
   const getSearchOutputs = () => {
     if (currentSymptomGroup.length > 0 && searchInput.length > 0) {
       return symptomGroup[currentSymptomGroup].filter(item => {
-        return item.toLowerCase().includes(searchInput.toLowerCase());
+        return (
+          item.toLowerCase().includes(searchInput.toLowerCase()) ||
+          (searchInput.toLowerCase().includes('swollen foot') &&
+            item === 'Sprains or strains')
+        );
       });
     } else if (currentSymptomGroup.length > 0) {
       return symptomGroup[currentSymptomGroup];
@@ -24,7 +29,11 @@ export const SeverityGuideSearch = () => {
       const returnList: string[] = [];
       Object.keys(symptomGroup).forEach(item => {
         symptomGroup[item].forEach(word => {
-          if (word.toLowerCase().includes(searchInput.toLowerCase())) {
+          if (
+            word.toLowerCase().includes(searchInput.toLowerCase()) ||
+            (searchInput.toLowerCase().includes('swollen foot') &&
+              word === 'Sprains or strains')
+          ) {
             returnList.push(word);
           }
         });
