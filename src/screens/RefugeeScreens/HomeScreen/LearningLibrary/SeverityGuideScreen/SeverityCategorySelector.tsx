@@ -1,6 +1,6 @@
-import {SymptomGroup, symptomGroup} from '@src/consts';
+import { symptomGroup} from '@src/consts';
 import globalStyles from '@src/global.styles';
-import React, {useState} from 'react';
+import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 

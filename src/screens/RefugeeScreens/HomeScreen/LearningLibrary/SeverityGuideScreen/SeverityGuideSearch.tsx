@@ -1,13 +1,15 @@
+//TODO: refactor functionality to be more modular, too much functionality just in this componenent
 import {IconTouchableOpacity} from '@src/components/IconTouchableOpacity';
 import globalStyles from '@src/global.styles';
 import React, {useState} from 'react';
 import {Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {SeverityCategorySelector} from './SeverityGuide/SeverityCategorySelector';
+import {SeverityCategorySelector} from './SeverityCategorySelector';
 import {conditionSymptomPairing, symptomGroup} from '@src/consts';
+import { useNavigation } from '@react-navigation/native';
 
-export const SeverityGuideScreen = () => {
+export const SeverityGuideSearch = () => {
   const [searchInput, setSearchInput] = useState<string>('');
   const [currentSymptomGroup, setCurrentSymptomGroup] = useState<string>('');
 
@@ -31,6 +33,7 @@ export const SeverityGuideScreen = () => {
     }
     return [];
   };
+  const navigation = useNavigation();
 
   return (
     <View style={{flex: 1, padding: 10}}>
@@ -87,7 +90,12 @@ export const SeverityGuideScreen = () => {
             getSearchOutputs().map(item => {
               return (
                 <TouchableOpacity
-                  onPress={() => console.log('hi')}
+                  onPress={() => {
+                    (navigation.navigate as any)('SymptomInfo', {
+                      symptom: item,
+                      asset: require('@src/assets/img/head.png'),
+                    });
+                  }}
                   style={{
                     flex: 1,
                     backgroundColor: globalStyles.blue.color,
